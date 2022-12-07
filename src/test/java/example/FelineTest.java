@@ -1,13 +1,9 @@
 package example;
 
 import com.example.Feline;
-import com.example.Lion;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -23,15 +19,8 @@ public class FelineTest {
 
     private Feline feline = new Feline();
 
-    public FelineTest() {
+    public FelineTest() {}
 
-    }
-
-    /*public FelineTest(int kittensCount, int expected) {
-        this.actualKittensCount = kittensCount;
-        this.expectedKittensCount = expected;
-    }
-*/
     @Before
     public void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -57,8 +46,7 @@ public class FelineTest {
 
     @Test
     public void getFoodTest() {
-        Feline feline = Mockito.mock(Feline.class);
-        assertThrows(Exception.class, () -> feline.getFood(Mockito.anyString()));
+        assertThrows(Exception.class, () -> feline.getFood("еда"));
     }
 
     @Test
